@@ -21,7 +21,8 @@ class Terreno{
     public double valorMetro;
     public double area;
     public double costoTerreno;
-    public Terreno() { } 
+    public Terreno() { 
+    } 
     public Terreno(double ancho, double largo, double valorMetro) {
         this.ancho = ancho;
         this.largo = largo;
