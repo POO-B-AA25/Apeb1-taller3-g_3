@@ -1,17 +1,11 @@
 public class EjecutorInstitucionEducativa {
+    
     public static InstitucionEducativa institucionEducativa1 = new InstitucionEducativa();
-    public static InstitucionEducativa institucionEducativa2;
+    public static InstitucionEducativa institucionEducativa2 = new InstitucionEducativa();
 
     public static void main(String[] args) {
         institucionEducativa1 = new InstitucionEducativa();
-        institucionEducativa1.setNombre("Unidad Educativa Bernardo Valdivieso");
-        institucionEducativa1.setTipoInstitucion("Publico");
-        institucionEducativa1.setNumAlumnos(1856);
-        institucionEducativa1.setNumDocentes(52);
-        institucionEducativa1.setNumSedes(1);
-        institucionEducativa1.setGastosEstudiante(6.00);
-        institucionEducativa1.calcularPresupuesto();
-        System.out.println(institucionEducativa1);
+        
 
         institucionEducativa2 = new InstitucionEducativa();
         institucionEducativa2.setNombre("Unidad Educativa Daniel Alvarez Burneo");
@@ -71,7 +65,12 @@ class InstitucionEducativa {
 
     @Override
     public String toString() {
-        return String.format("InstitucionEducativa { nombre = %s, tipoInstitucion = %s, numAlumnos = %d, numDocentes = %d, numSedes = %d, gastosEstudiante = %.2f, presupuesto = %.2f }",
-                             nombre, tipoInstitucion, numAlumnos, numDocentes, numSedes, gastosEstudiante, presupuesto);
+        return String.format("InstitucionEducativa\nnombre = %s\n"
+                + "tipoInstitucion = %s\n"
+                + "numAlumnos = %d\nnumDocentes = %d\nnumSedes = %d\n"
+                + "gastosEstudiante = %.2f\npresupuesto = %.2f",
+                             nombre, tipoInstitucion, numAlumnos, 
+                             numDocentes, numSedes, gastosEstudiante, 
+                             presupuesto);
     }
 }

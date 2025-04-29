@@ -3,11 +3,8 @@ public class EjecutorTerreno {
     public static Terreno terreno2;
     
     public static void main(String[] args) {
-        terreno1 = new Terreno(2, 3, 4);
-        terreno1.calcularArea();
-        terreno1.calcularCostoTerreno();
-        System.out.println(terreno1);
-        
+        terreno1 = new Terreno();
+    
         terreno2 = new Terreno(3, 3, 4);
         terreno2.calcularArea();
         terreno2.calcularCostoTerreno();
@@ -18,7 +15,7 @@ public class EjecutorTerreno {
 class Terreno{
     public double ancho;
     public double largo;
-    public double valorMetro;
+    public double valorMetroCuadrado;
     public double area;
     public double costoTerreno;
     public Terreno() { 
@@ -26,7 +23,7 @@ class Terreno{
     public Terreno(double ancho, double largo, double valorMetro) {
         this.ancho = ancho;
         this.largo = largo;
-        this.valorMetro = valorMetro; 
+        this.valorMetroCuadrado = valorMetro; 
     }
     public void setAncho(double ancho) {
         this.ancho = ancho;  
@@ -35,7 +32,7 @@ class Terreno{
         this.largo = largo; 
     } 
     public void setValorMetro(double valorMetro) {
-        this.valorMetro = valorMetro;  
+        this.valorMetroCuadrado = valorMetro;  
     } 
     public double getAncho() {
         return ancho;  
@@ -44,7 +41,7 @@ class Terreno{
         return largo;  
     } 
     public double getValorMetro() {
-        return valorMetro; 
+        return valorMetroCuadrado; 
     } 
     public double getArea() {
         return area; 
@@ -56,15 +53,15 @@ class Terreno{
         this.area = this.ancho * this.largo;
     }
     public void calcularCostoTerreno(){
-        this.costoTerreno = this.area * this.valorMetro;
+        this.costoTerreno = this.area * this.valorMetroCuadrado;
     }
     @Override
     public String toString() {
-        return String.format("Terreno {%s%.2f %s%.2f %s%.2f %s%.2f %s%.2f}",
-                                      "ancho = ", this.getAncho(),
-                                      ", largo = ", this.getLargo(),
-                                      ", valorMetro = ", this.getValorMetro(),
-                                      ", area = ", this.getArea(),
-                                      ", costoTerreno = ", this.getCostoTerreno());
+        return String.format("Terreno%s%.2f %s%.2f %s%.2f %s%.2f %s%.2f",
+                                      "\nancho = ", this.getAncho(),
+                                      "\nlargo = ", this.getLargo(),
+                                      "\nvalorMetroCuadrado = ", this.getValorMetro(),
+                                      "\narea = ", this.getArea(),
+                                      "\ncostoTerreno = ", this.getCostoTerreno());
     }
 }

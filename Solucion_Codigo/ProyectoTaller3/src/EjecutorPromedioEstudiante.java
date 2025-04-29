@@ -5,13 +5,15 @@ public class EjecutorPromedioEstudiante {
         Random rand = new Random();
         
         PromedioEstudiante estudiante1 = new PromedioEstudiante();
-        estudiante1.setNombreEstudiante("Carlos Rodrigez");
-        estudiante1.setCalificacionNota1(rand.nextDouble() * 10);
-        estudiante1.setCalificacionNota2(rand.nextDouble() * 10);
-        estudiante1.setCalificacionNota3(rand.nextDouble() * 10);
-        estudiante1.calcularPromedio();
-        estudiante1.determinarEstado();
-        System.out.println(estudiante1);
+        
+        PromedioEstudiante estudiante2 = new PromedioEstudiante();
+        estudiante2.setNombreEstudiante("Carlos Rodriguez");
+        estudiante2.setCalificacionNota1(rand.nextDouble() * 10);
+        estudiante2.setCalificacionNota2(rand.nextDouble() * 10);
+        estudiante2.setCalificacionNota3(rand.nextDouble() * 10);
+        estudiante2.calcularPromedio();
+        estudiante2.determinarEstado();
+        System.out.println(estudiante2);
     }
 }
 
@@ -26,7 +28,8 @@ class PromedioEstudiante {
     public PromedioEstudiante() {
     }
 
-    public PromedioEstudiante(String nombreEstudiante, double calificacionNota1, double calificacionNota2, double calificacionNota3) {
+    public PromedioEstudiante(String nombreEstudiante, double calificacionNota1,
+            double calificacionNota2, double calificacionNota3) {
         this.nombreEstudiante = nombreEstudiante;
         this.calificacionNota1 = calificacionNota1;
         this.calificacionNota2 = calificacionNota2;
@@ -74,7 +77,8 @@ class PromedioEstudiante {
     }
 
     public void calcularPromedio() {
-        promedioCalificaciones = (calificacionNota1 + calificacionNota2 + calificacionNota3) / 3;
+        promedioCalificaciones = (calificacionNota1 + calificacionNota2 + 
+                calificacionNota3) / 3;
     }
 
     public void determinarEstado() {
@@ -87,7 +91,12 @@ class PromedioEstudiante {
 
     @Override
     public String toString() {
-        return String.format("PromedioEstudiante { nombreEstudiante = %s, calificacionNota1 = %.2f, calificacionNota2 = %.2f, calificacionNota3 = %.2f, promedioCalificaciones = %.2f, estado = %s }",
-                              nombreEstudiante, calificacionNota1, calificacionNota2, calificacionNota3, promedioCalificaciones, estado);
+        return String.format("PromedioEstudiante\n"
+                + "nombreEstudiante = %s\ncalificacionNota1 = %.2f"
+                + "\ncalificacionNota2 = %.2f\ncalificacionNota3 = %.2f\n"
+                + "promedioCalificaciones = %.2f\nestado = %s",
+                              nombreEstudiante, calificacionNota1, 
+                              calificacionNota2, calificacionNota3, 
+                              promedioCalificaciones, estado);
     }
 }

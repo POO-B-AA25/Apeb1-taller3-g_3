@@ -1,21 +1,17 @@
 public class EjecutorEquivalenteHora {
     public static EquivalenteHora EquivalenteHora1 = new EquivalenteHora();
-    public static EquivalenteHora EquivalenteHora2;
+    public static EquivalenteHora EquivalenteHora2 = new EquivalenteHora();
 
     public static void main(String[] args) {
 
-        EquivalenteHora1.horas = 24;
-        EquivalenteHora1.minutos = calcularMinutos(EquivalenteHora1.horas);
-        EquivalenteHora1.segundos = calcularSegundos(EquivalenteHora1.horas);
-        EquivalenteHora1.dias = calcularDias(EquivalenteHora1.horas);
+        EquivalenteHora1 = new EquivalenteHora();
         
         EquivalenteHora2 = new EquivalenteHora();
         EquivalenteHora2.horas = 32;
         EquivalenteHora2.minutos = calcularMinutos(EquivalenteHora2.horas);
         EquivalenteHora2.segundos = calcularSegundos(EquivalenteHora2.horas);
         EquivalenteHora2.dias = calcularDias(EquivalenteHora2.horas);
-        
-        System.out.println(EquivalenteHora1);
+
         System.out.println(EquivalenteHora2);
     }
 
@@ -50,11 +46,10 @@ class EquivalenteHora {
 
     @Override
     public String toString() {
-        return "EquivalenteHora" + '[' +
-               "horas = " + horas + 
-               ", minutos = " + minutos + 
-               ", segundos = " + segundos + 
-               ", dias = " + dias + 
-               ']';
+        return String.format("EquivalenteHora\nhoras:%s\n"
+                + "Minutos: %s\n"
+                + "Segundos: %s\n"
+                + "Dias: %.2f",
+                horas, minutos, segundos, dias); 
     }
 }

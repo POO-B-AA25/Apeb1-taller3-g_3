@@ -1,9 +1,7 @@
 public class EjecutorProfesor {
+    
     public static void main(String[] args) {
-        Profesor profesor1 = new Profesor("Alexis", "Ruiz", 450.00, "1120215386");
-        profesor1.calcularIncremento();
-        profesor1.calcularSueldoTotal();
-        System.out.println(profesor1);
+        Profesor profesor1 = new Profesor();
 
         Profesor profesor2 = new Profesor("Solange", "Vidal", 450.00, "1104994356");
         profesor2.calcularIncremento();
@@ -80,7 +78,10 @@ class Profesor {
 
     @Override
     public String toString() {
-        return String.format("Profesor { nombre = %s, apellido = %s, sueldoBasico = %.2f, incremento = %.2f, sueldoTotal = %.2f, cedula = %s }",
-                             nombre, apellido, sueldoBasico, incremento, sueldoTotal, cedula);
+        return String.format("Profesor\nnombre = %s\napellido = %s"
+                + "\nsueldoBasico = %.2f\nincremento = %.2f\nsueldoTotal = %.2f"
+                + "\ncedula = %s",
+                             nombre, apellido, sueldoBasico, incremento, 
+                             sueldoTotal, cedula);
     }
 }

@@ -1,9 +1,11 @@
 public class EjecutorAutomovil {
     public static void main(String[] args) {
         
-        Automovil auto1 = new Automovil(1100147275, "TOYOTA", 2020, 25000.00);
-        auto1.calcularValorMatricula();
-        System.out.println(auto1);
+        Automovil auto1 = new Automovil();
+        
+        Automovil auto2 = new Automovil(1100147275, "TOYOTA", 2020, 25000.00);
+        auto2.calcularValorMatricula();
+        System.out.println(auto2);
     }
 }
 
@@ -13,11 +15,15 @@ class Automovil {
     public int anioFabrica;
     public double valorVehiculo;
     public double valorMatricula;
+    public int anioActual;
+    public int antiguedad;
+    
 
     public Automovil() {
     }
 
-    public Automovil(int cedulaDuenio, String marcaVehiculo, int anioFabrica, double valorVehiculo) {
+    public Automovil(int cedulaDuenio, String marcaVehiculo, int anioFabrica, 
+            double valorVehiculo) {
         this.cedulaDuenio = cedulaDuenio;
         this.marcaVehiculo = marcaVehiculo;
         this.anioFabrica = anioFabrica;
@@ -68,7 +74,9 @@ class Automovil {
 
     @Override
     public String toString() {
-        return String.format("Automovil { cedulaDuenio = %d, marcaVehiculo = %s, anioFabrica = %d, valorVehiculo = %.2f, valorMatricula = %.2f }",
-                              cedulaDuenio, marcaVehiculo, anioFabrica, valorVehiculo, valorMatricula);
+        return String.format("Automovil\ncedulaDuenio = %d\nmarcaVehiculo = %s\n"
+                + "anioFabrica = %d\nvalorVehiculo = %.2f\nvalorMatricula = %.2f",
+                              cedulaDuenio, marcaVehiculo, 
+                              anioFabrica, valorVehiculo, valorMatricula);
     }
 }

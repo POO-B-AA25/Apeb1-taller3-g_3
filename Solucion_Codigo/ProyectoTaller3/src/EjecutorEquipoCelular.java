@@ -5,15 +5,6 @@ public class EjecutorEquipoCelular {
 
     public static void main(String[] args) {
         equipoCelular1 = new EquipoCelular();
-        equipoCelular1.setSistemaOperativo("iOS");
-        equipoCelular1.setTamanioPantalla(6.2);
-        equipoCelular1.setCostoInicial(1199.99);
-        equipoCelular1.setIva(0.14);
-        equipoCelular1.setCostoInicialIva(167.99);
-        equipoCelular1.setDireccionMac("00:1C:4D:5E:6F:7A");
-        equipoCelular1.setImei("356998071234567");
-        equipoCelular1.calcularCostoFinal();
-        System.out.println(equipoCelular1);
 
         equipoCelular2 = new EquipoCelular();
         equipoCelular2.setSistemaOperativo("Android");
@@ -75,7 +66,11 @@ class EquipoCelular {
 
     @Override
     public String toString() {
-        return String.format("EquipoCelular { sistemaOperativo = %s, tamanioPantalla = %.2f, costoInicial = %.2f, iva = %.2f, costoInicialIva = %.2f, costoFinal = %.2f, direccionMac = %s, imei = %s }",
-                             sistemaOperativo, tamanioPantalla, costoInicial, iva, costoInicialIva, costoFinal, direccionMac, imei);
+        return String.format("EquipoCelular\nSistemaOperativo = %s\n"
+                + "tamanioPantalla = %.2f\ncostoInicial = %.2f\niva = %.2f\n"
+                + "costoInicialIva = %.2f, costoFinal = %.2f\n"
+                + "direccionMac = %s\nimei = %s ",
+                             sistemaOperativo, tamanioPantalla, costoInicial, 
+                             iva, costoInicialIva, costoFinal, direccionMac, imei);
     }
 }
