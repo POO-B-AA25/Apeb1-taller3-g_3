@@ -1,12 +1,9 @@
 public class EjecutorAutomovil {
     public static void main(String[] args) {
-        Automovil auto1 = new Automovil(1120215386, "KIA", 2014, 12000.00);
+        
+        Automovil auto1 = new Automovil(1100147275, "TOYOTA", 2020, 25000.00);
         auto1.calcularValorMatricula();
         System.out.println(auto1);
-
-        Automovil auto2 = new Automovil(1100147275, "TOYOTA", 2020, 25000.00);
-        auto2.calcularValorMatricula();
-        System.out.println(auto2);
     }
 }
 
